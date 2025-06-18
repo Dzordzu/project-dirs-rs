@@ -22,6 +22,7 @@ A library for retrieving common project directories for your projects.
 * [Supported directories](#supported-directories)
 * [Fully supported systems](#fully-supported-systems)
 * [Future plans](#future-plans)
+* [Similar projects](#similar-projects)
 
 <!-- vim-markdown-toc -->
 
@@ -146,3 +147,9 @@ We are planning to support the following languages:
 - [ ] Java / Kotlin
 - [ ] Golang
 - [ ] C#
+
+## Similar projects
+
+- [etcetera](https://github.com/lunacookies/etcetera) - rust only, simple strategy based directory retrival. Limited to user/local scopes.
+- [dirs](https://crates.io/crates/dirs) - rust only, limited to user scope.
+- [directories](https://crates.io/crates/directories) - rust only, similar to dirs.
