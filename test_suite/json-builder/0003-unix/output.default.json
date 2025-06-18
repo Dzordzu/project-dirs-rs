@@ -1,0 +1,59 @@
+{
+   "application_name": "my-project",
+   "dirs": {
+      "pwd": {
+         "bin": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/bin",
+         "lib": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/lib",
+         "include": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/include",
+         "runtime": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/tmp",
+         "config": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project",
+         "state": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/state",
+         "data": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/data",
+         "log": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/log",
+         "project-root": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project",
+         "cache": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/cache"
+      },
+      "custom-path": {
+         "cache": "/opt/apps/my-project/cache",
+         "lib": "/opt/apps/my-project/lib",
+         "include": "/opt/apps/my-project/include",
+         "runtime": "/opt/apps/my-project/tmp",
+         "project-root": "/opt/apps/my-project",
+         "data": "/opt/apps/my-project/data",
+         "config": "/opt/apps/my-project",
+         "log": "/opt/apps/my-project/log",
+         "bin": "/opt/apps/my-project/bin",
+         "state": "/opt/apps/my-project/state"
+      },
+      "custom-path-with-prefix": {
+         "data": "/opt/apps/myapp.my-project/data",
+         "state": "/opt/apps/myapp.my-project/state",
+         "config": "/opt/apps/myapp.my-project",
+         "cache": "/opt/apps/myapp.my-project/cache",
+         "log": "/opt/apps/myapp.my-project/log",
+         "include": "/opt/apps/myapp.my-project/include",
+         "project-root": "/opt/apps/myapp.my-project",
+         "runtime": "/opt/apps/myapp.my-project/tmp",
+         "bin": "/opt/apps/myapp.my-project/bin",
+         "lib": "/opt/apps/myapp.my-project/lib"
+      },
+      "custom-path-no-prefix": {
+         "config": "/opt/apps_2/my-project",
+         "cache": "/opt/apps_2/my-project/cache",
+         "log": "/opt/apps_2/my-project/log",
+         "bin": "/opt/apps_2/my-project/bin",
+         "include": "/opt/apps_2/my-project/include",
+         "project-root": "/opt/apps_2/my-project",
+         "data": "/opt/apps_2/my-project/data",
+         "state": "/opt/apps_2/my-project/state",
+         "lib": "/opt/apps_2/my-project/lib",
+         "runtime": "/opt/apps_2/my-project/tmp"
+      },
+      "custom-path-no-prefix-selective": {
+         "state": "/opt/apps_2/my-project/state",
+         "config": "/opt/apps_2/my-project",
+         "log": "/opt/apps_2/my-project/log",
+         "data": "/opt/apps_2/my-project/data"
+      }
+   }
+}

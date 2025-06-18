@@ -1,0 +1,16 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "xdg-no-fallback": {
+         "strategy": "xdg"
+      }
+   },
+   "custom_env": {
+      "allow_variable_clearing": true,
+      "env": {
+        "HOME": "/home/mojito/22/"
+      }
+   }
+}

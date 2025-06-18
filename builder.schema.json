@@ -1,0 +1,364 @@
+{
+  "$defs": {
+    "CustomEnv": {
+      "description": "Specify env for the builder",
+      "properties": {
+        "allow_variable_clearing": {
+          "default": false,
+          "description": "Allow variable clearing by empty string or undefined values",
+          "type": "boolean"
+        },
+        "env": {
+          "additionalProperties": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "default": {},
+          "description": "Custom env definition. Empty strings are treated as undefined by default",
+          "type": "object"
+        },
+        "fallback_to_system": {
+          "default": false,
+          "description": "Use system as a fallback",
+          "type": "boolean"
+        }
+      },
+      "type": "object"
+    },
+    "Directory": {
+      "description": "Purpose of directory existence. Ex. Bin, Config, Cache etc.",
+      "oneOf": [
+        {
+          "const": "bin",
+          "description": "Binaries directory. This is where the project executable(s) is/are located",
+          "type": "string"
+        },
+        {
+          "const": "cache",
+          "description": "Non-essential data, usually used to speed up the application",
+          "type": "string"
+        },
+        {
+          "const": "config",
+          "description": "You can store there conf.d dir and other config files",
+          "type": "string"
+        },
+        {
+          "const": "data",
+          "description": "Essential files for application like db files, cross-session data etc.",
+          "type": "string"
+        },
+        {
+          "const": "include",
+          "description": "C/C++ headers files. Should include files like lib.h, lib.hpp or lib.inc",
+          "type": "string"
+        },
+        {
+          "const": "lib",
+          "description": "Shared library files. Should include files like lib.a, lib.so, lib.dylib or lib.dll",
+          "type": "string"
+        },
+        {
+          "const": "log",
+          "description": "Application logs. Usually subdir of the state",
+          "type": "string"
+        },
+        {
+          "const": "project-root",
+          "description": "Root directory of the project. Has meaning only for the some strategies",
+          "type": "string"
+        },
+        {
+          "const": "runtime",
+          "description": "Runtime files are similar to the cache, but don't persist between session/reboot",
+          "type": "string"
+        },
+        {
+          "const": "state",
+          "description": "Non-essential data files that should persist between sessions. E.g. logs, history",
+          "type": "string"
+        }
+      ]
+    },
+    "Fhs": {
+      "enum": [
+        "local",
+        "shared"
+      ],
+      "type": "string"
+    },
+    "Filter": {
+      "oneOf": [
+        {
+          "const": "fs-present",
+          "description": "Return only directories that exist on the fs",
+          "type": "string"
+        },
+        {
+          "const": "fs-absent",
+          "description": "Return only directories that don't exist on the fs",
+          "type": "string"
+        },
+        {
+          "const": "fs-not-dir",
+          "description": "Return only directories that exist on the fs and are NOT directories",
+          "type": "string"
+        },
+        {
+          "const": "fs-denied",
+          "description": "Return only access denied directories",
+          "type": "string"
+        },
+        {
+          "const": "fn-non-valid-dir",
+          "description": "Return everything that is not a valid dir. Negation of the FsPresent",
+          "type": "string"
+        }
+      ]
+    },
+    "Spec": {
+      "anyOf": [
+        {
+          "const": "system-default",
+          "description": "Use system defaults in the [`Scoped`] format",
+          "type": "string"
+        },
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/SpecEntry"
+          },
+          "description": "Define own spec, with custom filters, mountpoints etc.",
+          "title": "custom",
+          "type": "object"
+        }
+      ]
+    },
+    "SpecEntry": {
+      "oneOf": [
+        {
+          "description": "Get local directories based on the current system",
+          "properties": {
+            "strategy": {
+              "const": "current-local",
+              "type": "string"
+            }
+          },
+          "required": [
+            "strategy"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get user directories based on the current system",
+          "properties": {
+            "strategy": {
+              "const": "current-user",
+              "type": "string"
+            }
+          },
+          "required": [
+            "strategy"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get system directories based on the current system",
+          "properties": {
+            "strategy": {
+              "const": "current-system",
+              "type": "string"
+            }
+          },
+          "required": [
+            "strategy"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get directories using FHS standard",
+          "properties": {
+            "strategy": {
+              "const": "fhs",
+              "type": "string"
+            },
+            "strategy_config": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/Fhs"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "strategy",
+            "strategy_config"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get directories using XDG standard",
+          "properties": {
+            "strategy": {
+              "const": "xdg",
+              "type": "string"
+            }
+          },
+          "required": [
+            "strategy"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get directories using unix-style directory",
+          "properties": {
+            "strategy": {
+              "const": "unix",
+              "type": "string"
+            },
+            "strategy_config": {
+              "$ref": "#/$defs/Unix"
+            }
+          },
+          "required": [
+            "strategy",
+            "strategy_config"
+          ],
+          "type": "object"
+        },
+        {
+          "description": "Get directories for windows",
+          "properties": {
+            "strategy": {
+              "const": "windows",
+              "type": "string"
+            },
+            "strategy_config": {
+              "$ref": "#/$defs/Windows"
+            }
+          },
+          "required": [
+            "strategy",
+            "strategy_config"
+          ],
+          "type": "object"
+        }
+      ],
+      "properties": {
+        "directories": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Directory"
+          },
+          "type": "array"
+        },
+        "filter": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Filter"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "mountpoint": {
+          "default": null,
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "type": "object"
+    },
+    "Unix": {
+      "anyOf": [
+        {
+          "enum": [
+            "pwd",
+            "home",
+            "binary"
+          ],
+          "type": "string"
+        },
+        {
+          "properties": {
+            "path": {
+              "type": "string"
+            },
+            "prefix": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "prefix"
+          ],
+          "title": "custom",
+          "type": "object"
+        }
+      ]
+    },
+    "Windows": {
+      "oneOf": [
+        {
+          "const": "standard",
+          "description": "User installation for windows",
+          "type": "string"
+        },
+        {
+          "const": "local",
+          "description": "User (local only) installation for windows",
+          "type": "string"
+        },
+        {
+          "const": "shared",
+          "description": "User (roamed/shared) installation for windows",
+          "type": "string"
+        },
+        {
+          "const": "system",
+          "description": "Global installation for windows",
+          "type": "string"
+        }
+      ]
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "application": {
+      "type": "string"
+    },
+    "custom_env": {
+      "$ref": "#/$defs/CustomEnv",
+      "default": {
+        "allow_variable_clearing": false,
+        "env": {},
+        "fallback_to_system": false
+      },
+      "description": "Specify env for the custom builder\n**NOTE**: It does only work for custom spec builders"
+    },
+    "organization": {
+      "type": "string"
+    },
+    "qualifier": {
+      "type": "string"
+    },
+    "spec": {
+      "$ref": "#/$defs/Spec"
+    }
+  },
+  "required": [
+    "qualifier",
+    "organization",
+    "application",
+    "spec"
+  ],
+  "title": "Builder",
+  "type": "object"
+}

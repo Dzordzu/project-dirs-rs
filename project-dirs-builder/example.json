@@ -1,0 +1,31 @@
+{
+   "qualifier": "com",
+   "organization": "example",
+   "application": "myapp",
+   "spec": {
+      "linux-system-mounted": {
+         "strategy": "fhs",
+         "root_mountpoint": "/mnt/",
+         "directories": [ "config", "log" ],
+         "strategy_config": "local"
+         
+      },
+      "linux-system": {
+         "strategy": "fhs",
+         "directories": [ "config", "log" ],
+         "filter": "fs-present",
+         "strategy_config": "local"
+
+      },
+      "xdg": {
+         "strategy": "xdg",
+         "directories": [ "config", "log" ],
+         "filter": "fs-present"
+      },
+      "local": {
+         "strategy": "unix",
+         "strategy_config": "pwd",
+         "directories": [ "config", "log" ]
+      }
+   }
+}

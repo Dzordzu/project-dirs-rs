@@ -1,0 +1,47 @@
+#!/bin/bash
+
+set -e
+
+IMAGE_NAME="project-dirs-bin:local"
+REPO_URL="https://github.com/Dzordzu/project-dirs-rs"
+USER_HOME="$HOME"
+MOUNT_PATH="$(realpath "$PWD")"
+
+debug_log() {
+  if [[ "$DEBUG" == "1" || "$DEBUG" == "true" ]]; then
+    echo "$@"
+  fi
+}
+
+quiet_run() {
+  if [[ "$DEBUG" == "1" || "$DEBUG" == "true" ]]; then
+    "$@"
+  else
+    "$@" > /dev/null 2>&1
+  fi
+}
+
+# Check if image exists
+if [[ "$FORCE_REBUILD" = "1" ||  "$FORCE_REBUILD" = "true" ]] || ! docker image inspect "$IMAGE_NAME" > /dev/null 2>&1; then
+  if [[ "$LOCAL_REPO" == "1" || "$LOCAL_REPO" == "true" ]]; then
+    BUILD_CONTEXT="."
+    debug_log "Building image from local repository."
+  else
+    TMP_DIR=$(mktemp -d)
+    debug_log "Cloning branch '$REPO_BRANCH' from $REPO_URL into $TMP_DIR"
+    quiet_run git clone --depth 1 --branch "$REPO_BRANCH" "$REPO_URL" "$TMP_DIR"
+    BUILD_CONTEXT="$TMP_DIR"
+  fi
+
+  debug_log "Building Docker image '$IMAGE_NAME'..."
+  quiet_run docker build -t "$IMAGE_NAME" "$BUILD_CONTEXT"
+else
+  debug_log "Docker image '$IMAGE_NAME' already exists. Skipping build."
+fi
+
+docker run --rm -i \
+  -v "$PWD":"$MOUNT_PATH":ro \
+  -v "$USER_HOME":"$USER_HOME":ro \
+  -w "$MOUNT_PATH" \
+  -e HOME="$USER_HOME" \
+  "$IMAGE_NAME" "$@"

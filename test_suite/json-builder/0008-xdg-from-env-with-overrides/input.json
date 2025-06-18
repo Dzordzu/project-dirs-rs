@@ -1,0 +1,22 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "xdg-no-fallback": {
+         "strategy": "xdg"
+      }
+   },
+   "custom_env": {
+      "env": {
+         "HOME": "/home/mojito/",
+         "XDG_DATA_HOME": "/mnt/home",
+         "XDG_CONFIG_HOME": "/mnt/config",
+         "XDG_CACHE_HOME": "/mnt/cache",
+         "XDG_STATE_HOME": "/mnt/state",
+         "XDG_RUNTIME_DIR": "/mnt/runtime",
+         "X1": "false",
+         "s@": null
+      }
+   }
+}

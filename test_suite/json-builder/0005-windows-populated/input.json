@@ -1,0 +1,34 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "windows-std": {
+         "strategy": "windows",
+         "strategy_config": "standard"
+      },
+      "windows-local": {
+         "strategy": "windows",
+         "strategy_config": "local"
+      },
+      "windows-shared": {
+         "strategy": "windows",
+         "strategy_config": "shared"
+      },
+      "windows-system": {
+         "strategy": "windows",
+         "strategy_config": "system"
+      }
+   },
+   "custom_env": {
+      "env": {
+         "%ProgramFiles%": "A:\\dir",
+         "%ProgramData%": "B:\\dir",
+         "%RoamingAppData%": "C:\\dir",
+         "%LocalAppData%": "D:\\dir",
+         "HOME": "???VAR",
+         "A": null,
+         "B": ""
+      }
+   }
+}

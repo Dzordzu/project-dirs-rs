@@ -1,0 +1,15 @@
+[package]
+name = "project-dirs-builder"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { workspace = true, features = ["derive"] }
+project-dirs = { path = "../project-dirs", features = ["serde"] }
+schemars = { workspace = true, optional = true }
+
+[dev-dependencies]
+serde_json = { workspace = true }
+
+[features]
+schemars = ["dep:schemars"]

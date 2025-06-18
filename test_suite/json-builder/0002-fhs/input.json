@@ -1,0 +1,19 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "shared": {
+         "strategy": "fhs"
+      },
+      "local": {
+         "strategy": "fhs",
+         "strategy_config": "local"
+      },
+      "shared-mounted": {
+         "strategy": "fhs",
+         "strategy_config": "local",
+         "mountpoint": "/mnt/remote/"
+      }
+   }
+}

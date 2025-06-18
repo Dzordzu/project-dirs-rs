@@ -1,0 +1,42 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "example-project-dirs",
+   "spec": {
+      "xdg-present": {
+         "strategy": "unix",
+         "strategy_config": {
+             "path": "/PROJECT_ROOT/test_suite"
+         },
+         "filter": "fs-present"
+      },
+      "xdg-absent": {
+         "strategy": "unix",
+         "strategy_config": {
+             "path": "/PROJECT_ROOT/test_suite"
+         },
+         "filter": "fs-absent"
+      },
+      "fs-denied": {
+         "strategy": "unix",
+         "strategy_config": {
+             "path": "/PROJECT_ROOT/test_suite"
+         },
+         "filter": "fs-denied"
+      },
+      "fs-non-valid-dir": {
+         "strategy": "unix",
+         "strategy_config": {
+             "path": "/PROJECT_ROOT/test_suite"
+         },
+         "filter": "fs-non-valid-dir"
+      },
+      "xdg-not-dir": {
+         "strategy": "unix",
+         "strategy_config": {
+             "path": "/PROJECT_ROOT/test_suite"
+         },
+         "filter": "fs-not-dir"
+      }
+   }
+}

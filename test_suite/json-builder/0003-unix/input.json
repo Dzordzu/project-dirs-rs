@@ -1,0 +1,37 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "custom-path-no-prefix": {
+         "strategy": "unix",
+         "strategy_config":  {
+            "path": "/opt/apps_2/"
+         }
+      },
+      "pwd": {
+         "strategy": "unix",
+         "strategy_config": "pwd"
+      },
+      "custom-path-no-prefix-selective": {
+         "strategy": "unix",
+         "directories": ["state", "log", "data", "config"],
+         "strategy_config":  {
+            "path": "/opt/apps_2/"
+         }
+      },
+      "custom-path": {
+         "strategy": "unix",
+         "strategy_config":  {
+            "path": "/opt/apps/"
+         }
+      },
+      "custom-path-with-prefix": {
+         "strategy": "unix",
+         "strategy_config":  {
+            "path": "/opt/apps/",
+            "prefix": "myapp."
+         }
+      }
+   }
+}

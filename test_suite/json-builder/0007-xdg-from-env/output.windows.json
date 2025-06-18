@@ -1,0 +1,16 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "xdg-no-fallback": {
+      "cache": "/opt/cache\\my-project",
+      "include": "/opt/home\\my-project\\include",
+      "state": "/opt/state\\my-project",
+      "bin": "C:\\Users\\dzordzu\\.local\\bin",
+      "log": "/opt/state\\my-project\\log",
+      "lib": "/opt/home\\my-project\\lib",
+      "data": "/opt/home\\my-project",
+      "runtime": "/opt/runtime\\my-project",
+      "config": "/opt/config\\my-project"
+    }
+  }
+}

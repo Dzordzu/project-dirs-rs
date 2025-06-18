@@ -1,0 +1,38 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "shared": {
+      "state": "/var/lib/my-project",
+      "data": "/var/lib/my-project",
+      "cache": "/var/cache/my-project",
+      "lib": "/usr/lib/my-project",
+      "runtime": "/run/my-project",
+      "log": "/var/log/my-project",
+      "config": "/etc/my-project",
+      "bin": "/usr/bin",
+      "include": "/usr/include/my-project"
+    },
+    "local": {
+      "runtime": "/run/my-project",
+      "cache": "/var/cache/my-project",
+      "config": "/usr/local/etc/my-project",
+      "log": "/var/log/my-project",
+      "data": "/var/lib/my-project",
+      "bin": "/usr/local/bin",
+      "state": "/var/lib/my-project",
+      "lib": "/usr/local/lib/my-project",
+      "include": "/usr/local/include/my-project"
+    },
+    "shared-mounted": {
+      "log": "/mnt/remote/var/log/my-project",
+      "cache": "/mnt/remote/var/cache/my-project",
+      "runtime": "/mnt/remote/run/my-project",
+      "include": "/mnt/remote/usr/local/include/my-project",
+      "config": "/mnt/remote/usr/local/etc/my-project",
+      "state": "/mnt/remote/var/lib/my-project",
+      "data": "/mnt/remote/var/lib/my-project",
+      "lib": "/mnt/remote/usr/local/lib/my-project",
+      "bin": "/mnt/remote/usr/local/bin"
+    }
+  }
+}

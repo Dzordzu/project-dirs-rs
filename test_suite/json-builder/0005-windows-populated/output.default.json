@@ -1,0 +1,51 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "windows-shared": {
+      "log": "C:\\dir/project-dirs/my-project/logs",
+      "include": "C:\\dir/project-dirs/my-project/include",
+      "project-root": "C:\\dir",
+      "bin": "C:\\dir/project-dirs/my-project/bin",
+      "data": "C:\\dir/project-dirs/my-project/data",
+      "runtime": "C:\\dir/project-dirs/my-project/tmp",
+      "state": "C:\\dir/project-dirs/my-project/state",
+      "config": "C:\\dir/project-dirs/my-project/config",
+      "cache": "C:\\dir/project-dirs/my-project/cache",
+      "lib": "C:\\dir/project-dirs/my-project/lib"
+    },
+    "windows-system": {
+      "state": "B:\\dir/project-dirs/my-project/state",
+      "bin": "A:\\dir/project-dirs/my-project/bin",
+      "log": "B:\\dir/project-dirs/my-project/logs",
+      "data": "B:\\dir/project-dirs/my-project/data",
+      "config": "A:\\dir/project-dirs/my-project/config",
+      "cache": "B:\\dir/project-dirs/my-project/cache",
+      "runtime": "B:\\dir/project-dirs/my-project/tmp",
+      "include": "A:\\dir/project-dirs/my-project/include",
+      "lib": "A:\\dir/project-dirs/my-project/lib"
+    },
+    "windows-std": {
+      "include": "C:\\dir/project-dirs/my-project/include",
+      "state": "D:\\dir/project-dirs/my-project/state",
+      "log": "D:\\dir/project-dirs/my-project/logs",
+      "config": "C:\\dir/project-dirs/my-project/config",
+      "lib": "C:\\dir/project-dirs/my-project/lib",
+      "runtime": "D:\\dir/project-dirs/my-project/tmp",
+      "bin": "C:\\dir/project-dirs/my-project/bin",
+      "data": "D:\\dir/project-dirs/my-project/data",
+      "cache": "D:\\dir/project-dirs/my-project/cache"
+    },
+    "windows-local": {
+      "data": "D:\\dir/project-dirs/my-project/data",
+      "bin": "D:\\dir/project-dirs/my-project/bin",
+      "log": "D:\\dir/project-dirs/my-project/logs",
+      "cache": "D:\\dir/project-dirs/my-project/cache",
+      "include": "D:\\dir/project-dirs/my-project/include",
+      "runtime": "D:\\dir/project-dirs/my-project/tmp",
+      "state": "D:\\dir/project-dirs/my-project/state",
+      "config": "D:\\dir/project-dirs/my-project/config",
+      "lib": "D:\\dir/project-dirs/my-project/lib",
+      "project-root": "D:\\dir"
+    }
+  }
+}

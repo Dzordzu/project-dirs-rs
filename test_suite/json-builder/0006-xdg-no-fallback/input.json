@@ -1,0 +1,13 @@
+{
+   "qualifier": "org",
+   "organization": "project-dirs",
+   "application": "my-project",
+   "spec": {
+      "xdg-no-fallback": {
+         "strategy": "xdg"
+      }
+   },
+   "custom_env": {
+       "fallback_to_system": false
+   }
+}

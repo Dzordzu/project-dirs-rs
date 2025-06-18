@@ -1,0 +1,29 @@
+{
+  "$defs": {
+    "ProjectDirs": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Project directories by directory type ([`Directory`] to [`PathBuf`] mapping)",
+      "type": "object"
+    }
+  },
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "properties": {
+    "application_name": {
+      "type": "string"
+    },
+    "dirs": {
+      "additionalProperties": {
+        "$ref": "#/$defs/ProjectDirs"
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "application_name",
+    "dirs"
+  ],
+  "title": "BuilderResult",
+  "type": "object"
+}

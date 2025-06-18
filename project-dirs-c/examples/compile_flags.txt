@@ -1,0 +1,4 @@
+-L../../target/debug/
+-lproject_dirs_c
+-I../
+

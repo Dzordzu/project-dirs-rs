@@ -1,0 +1,9 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "windows-system": {},
+    "windows-shared": {},
+    "windows-local": {},
+    "windows-std": {}
+  }
+}

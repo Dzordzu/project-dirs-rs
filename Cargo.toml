@@ -1,0 +1,17 @@
+[workspace.dependencies]
+schemars = { version = "1.0.0-alpha.19" }
+serde = { version = "1.0.219" }
+serde_json = { version = "1.0.140" }
+
+[workspace]
+resolver = "2"
+members = [
+   "project-dirs",
+   "project-dirs-bin",
+   "project-dirs-builder", "project-dirs-c",
+   "project-dirs-py",
+   "test_suite",
+   "xtask",
+   "xtask-json",
+]
+default-members = ["project-dirs", "project-dirs-builder", "test_suite"]

@@ -1,0 +1,19 @@
+[package]
+name = "project-dirs-bin"
+version = "0.1.0"
+edition = "2024"
+
+[features]
+pedantic = []
+
+[dependencies]
+clap = { version = "4.5.36", features = ["derive"] }
+project-dirs-builder = { path = "../project-dirs-builder" }
+project-dirs = { path = "../project-dirs", features = [
+   "thiserror",
+   "strum",
+   "serde",
+] }
+serde_json = { workspace = true }
+serde_path_to_error = "0.1.17"
+jsonschema = "0.30.0"

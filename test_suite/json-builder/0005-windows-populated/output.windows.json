@@ -1,0 +1,51 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "windows-local": {
+      "data": "D:\\dir\\project-dirs\\my-project\\data",
+      "bin": "D:\\dir\\project-dirs\\my-project\\bin",
+      "include": "D:\\dir\\project-dirs\\my-project\\include",
+      "log": "D:\\dir\\project-dirs\\my-project\\logs",
+      "runtime": "D:\\dir\\project-dirs\\my-project\\tmp",
+      "cache": "D:\\dir\\project-dirs\\my-project\\cache",
+      "lib": "D:\\dir\\project-dirs\\my-project\\lib",
+      "project-root": "D:\\dir",
+      "state": "D:\\dir\\project-dirs\\my-project\\state",
+      "config": "D:\\dir\\project-dirs\\my-project\\config"
+    },
+    "windows-std": {
+      "include": "C:\\dir\\project-dirs\\my-project\\include",
+      "data": "D:\\dir\\project-dirs\\my-project\\data",
+      "lib": "C:\\dir\\project-dirs\\my-project\\lib",
+      "cache": "D:\\dir\\project-dirs\\my-project\\cache",
+      "config": "C:\\dir\\project-dirs\\my-project\\config",
+      "runtime": "D:\\dir\\project-dirs\\my-project\\tmp",
+      "bin": "C:\\dir\\project-dirs\\my-project\\bin",
+      "state": "D:\\dir\\project-dirs\\my-project\\state",
+      "log": "D:\\dir\\project-dirs\\my-project\\logs"
+    },
+    "windows-system": {
+      "lib": "A:\\dir\\project-dirs\\my-project\\lib",
+      "include": "A:\\dir\\project-dirs\\my-project\\include",
+      "bin": "A:\\dir\\project-dirs\\my-project\\bin",
+      "log": "B:\\dir\\project-dirs\\my-project\\logs",
+      "data": "B:\\dir\\project-dirs\\my-project\\data",
+      "cache": "B:\\dir\\project-dirs\\my-project\\cache",
+      "config": "A:\\dir\\project-dirs\\my-project\\config",
+      "runtime": "B:\\dir\\project-dirs\\my-project\\tmp",
+      "state": "B:\\dir\\project-dirs\\my-project\\state"
+    },
+    "windows-shared": {
+      "include": "C:\\dir\\project-dirs\\my-project\\include",
+      "lib": "C:\\dir\\project-dirs\\my-project\\lib",
+      "cache": "C:\\dir\\project-dirs\\my-project\\cache",
+      "config": "C:\\dir\\project-dirs\\my-project\\config",
+      "bin": "C:\\dir\\project-dirs\\my-project\\bin",
+      "runtime": "C:\\dir\\project-dirs\\my-project\\tmp",
+      "project-root": "C:\\dir",
+      "data": "C:\\dir\\project-dirs\\my-project\\data",
+      "log": "C:\\dir\\project-dirs\\my-project\\logs",
+      "state": "C:\\dir\\project-dirs\\my-project\\state"
+    }
+  }
+}

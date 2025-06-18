@@ -1,0 +1,15 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "xdg-no-fallback": {
+      "state": "/home/mojito/.local/state/my-project",
+      "lib": "/mnt/home/my-project/lib",
+      "config": "/mnt/config/my-project",
+      "cache": "/mnt/cache/my-project",
+      "bin": "/home/mojito/.local/bin",
+      "log": "/home/mojito/.local/state/my-project/log",
+      "include": "/mnt/home/my-project/include",
+      "data": "/mnt/home/my-project"
+    }
+  }
+}

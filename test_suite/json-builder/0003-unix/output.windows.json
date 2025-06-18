@@ -1,0 +1,29 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "custom-pwd": {
+      "runtime": "/opt/apps/myapp.my-project\\tmp",
+      "data": "/opt/apps/myapp.my-project\\data",
+      "include": "/opt/apps/myapp.my-project\\include",
+      "log": "/opt/apps/myapp.my-project\\log",
+      "state": "/opt/apps/myapp.my-project\\state",
+      "project-root": "/opt/apps/myapp.my-project",
+      "config": "/opt/apps/myapp.my-project",
+      "lib": "/opt/apps/myapp.my-project\\lib",
+      "bin": "/opt/apps/myapp.my-project\\bin",
+      "cache": "/opt/apps/myapp.my-project\\cache"
+    },
+    "custom-pwd-no-prefix": {
+      "log": "/opt/apps_2/my-project\\log",
+      "runtime": "/opt/apps_2/my-project\\tmp",
+      "bin": "/opt/apps_2/my-project\\bin",
+      "project-root": "/opt/apps_2/my-project",
+      "state": "/opt/apps_2/my-project\\state",
+      "lib": "/opt/apps_2/my-project\\lib",
+      "cache": "/opt/apps_2/my-project\\cache",
+      "data": "/opt/apps_2/my-project\\data",
+      "include": "/opt/apps_2/my-project\\include",
+      "config": "/opt/apps_2/my-project"
+    }
+  }
+}

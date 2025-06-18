@@ -1,0 +1,13 @@
+[package]
+name = "xtask-json"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+project-dirs = { path = "../project-dirs", features = ["serde", "schemars"] }
+project-dirs-builder = { path = "../project-dirs-builder", features = [
+   "schemars",
+] }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }

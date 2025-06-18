@@ -1,0 +1,6 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "xdg-no-fallback": {}
+  }
+}

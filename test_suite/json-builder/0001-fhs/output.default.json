@@ -1,0 +1,16 @@
+{
+  "application_name": "my-project",
+  "dirs": {
+    "simple": {
+      "lib": "/usr/lib/my-project",
+      "include": "/usr/include/my-project",
+      "bin": "/usr/bin",
+      "log": "/var/log/my-project",
+      "config": "/etc/my-project",
+      "runtime": "/run/my-project",
+      "cache": "/var/cache/my-project",
+      "data": "/var/lib/my-project",
+      "state": "/var/lib/my-project"
+    }
+  }
+}
