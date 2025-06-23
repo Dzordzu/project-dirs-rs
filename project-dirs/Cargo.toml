@@ -3,7 +3,7 @@ name = "project-dirs"
 version = "0.1.0"
 authors = ["tomekdur@wp.pl"]
 description = "A library for finding project directories"
-license = "MIT or Apache-2.0"
+license = "MIT"
 edition = "2024"
 
 [features]
