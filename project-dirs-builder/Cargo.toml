@@ -8,7 +8,7 @@ license = "MIT"
 
 [dependencies]
 serde = { workspace = true, features = ["derive"] }
-project-dirs = { path = "../project-dirs", features = ["serde"] }
+project-dirs = { path = "../project-dirs", features = ["serde"], version = "0.1.0" }
 schemars = { workspace = true, optional = true }
 
 [dev-dependencies]
