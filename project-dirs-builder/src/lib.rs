@@ -20,15 +20,26 @@ pub enum Fhs {
 #[serde(rename_all = "kebab-case")]
 #[cfg_attr(feature = "schemars", derive(schemars::JsonSchema))]
 pub enum Unix {
+    /// Use the current user dir as base for the root of the project
     Pwd,
+    /// Use user home dir as base for the root of the project
     Home,
+    /// Use current binary dir as base for the root of the project
     Binary,
 
+    /// Specify custom dir as base for the root of the project
     #[serde(untagged)]
     Custom {
+        /// Path of the base dir for the project root dir
         path: PathBuf,
+
+        /// Prefix that is applied to the project root dirname
         #[serde(default)]
         prefix: Option<String>,
+
+        /// Do not add project name to the specified path
+        #[serde(default)]
+        skip_project_addition: bool,
     },
 }
 
@@ -227,9 +238,14 @@ impl Builder {
                     .unix_binary()
                     .map(Into::into)
                     .unwrap_or(ProjectDirs::empty()),
-                Unix::Custom { path, prefix } => match prefix {
-                    Some(prefix) => project.unix_prefixed(path, prefix).into(),
-                    None => project.unix(path).into(),
+                Unix::Custom {
+                    path,
+                    prefix,
+                    skip_project_addition,
+                } => match (skip_project_addition, prefix) {
+                    (true, _) => project_dirs::strategy::unix::unix(&path).into(),
+                    (false, Some(prefix)) => project.unix_prefixed(path, prefix).into(),
+                    (false, None) => project.unix(path).into(),
                 },
             },
             Strategy::Windows(windows) => {

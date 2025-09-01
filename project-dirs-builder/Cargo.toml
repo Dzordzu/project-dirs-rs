@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2024"
 authors = ["tomekdur@wp.pl"]
 description = "A library for building project-dirs"
+repository = "https://github.com/dzordzu/project-dirs-rs"
 license = "MIT"
 
 [dependencies]

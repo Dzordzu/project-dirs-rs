@@ -32,6 +32,13 @@
             "path": "/opt/apps/",
             "prefix": "myapp."
          }
+      },
+      "root-path": {
+         "strategy": "unix",
+         "strategy_config":  {
+            "path": "/opt/apps/",
+            "skip_project_addition": true
+         }
       }
    }
 }

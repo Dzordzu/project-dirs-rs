@@ -976,7 +976,7 @@ dependencies = [
 
 [[package]]
 name = "project-dirs"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "home",
  "pretty_assertions",

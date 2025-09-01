@@ -2,16 +2,16 @@
    "application_name": "my-project",
    "dirs": {
       "pwd": {
-         "bin": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/bin",
-         "lib": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/lib",
-         "include": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/include",
-         "runtime": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/tmp",
-         "config": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project",
-         "state": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/state",
-         "data": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/data",
-         "log": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/log",
-         "project-root": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project",
-         "cache": "/home/dzordzu/own/project-dirs-rs/test_suite/.my-project/cache"
+         "bin": "/PROJECT_ROOT/test_suite/.my-project/bin",
+         "lib": "/PROJECT_ROOT/test_suite/.my-project/lib",
+         "include": "/PROJECT_ROOT/test_suite/.my-project/include",
+         "runtime": "/PROJECT_ROOT/test_suite/.my-project/tmp",
+         "config": "/PROJECT_ROOT/test_suite/.my-project",
+         "state": "/PROJECT_ROOT/test_suite/.my-project/state",
+         "data": "/PROJECT_ROOT/test_suite/.my-project/data",
+         "log": "/PROJECT_ROOT/test_suite/.my-project/log",
+         "project-root": "/PROJECT_ROOT/test_suite/.my-project",
+         "cache": "/PROJECT_ROOT/test_suite/.my-project/cache"
       },
       "custom-path": {
          "cache": "/opt/apps/my-project/cache",
@@ -54,6 +54,18 @@
          "config": "/opt/apps_2/my-project",
          "log": "/opt/apps_2/my-project/log",
          "data": "/opt/apps_2/my-project/data"
+      },
+      "root-path": {
+         "bin": "/opt/apps/bin",
+         "lib": "/opt/apps/lib",
+         "cache": "/opt/apps/cache",
+         "project-root": "/opt/apps/",
+         "data": "/opt/apps/data",
+         "include": "/opt/apps/include",
+         "runtime": "/opt/apps/tmp",
+         "log": "/opt/apps/log",
+         "config": "/opt/apps/",
+         "state": "/opt/apps/state"
       }
    }
 }

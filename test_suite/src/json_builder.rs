@@ -107,11 +107,16 @@ fn test_single_input_output(
     let mut builder: project_dirs_builder::Builder =
         serde_json::from_reader(std::fs::File::open(input_file).unwrap()).unwrap();
 
+    let mut project_root_should_be_overriden = false;
+
     if override_project_root {
         if let project_dirs_builder::Spec::Custom(spec) = &mut builder.spec {
             for entry in spec {
                 if let project_dirs_builder::Strategy::Unix(unix_spec) = &mut entry.1.strategy {
                     if let project_dirs_builder::Unix::Custom { path, .. } = unix_spec {
+                        // The spec is unix::custom, we should enable it
+                        project_root_should_be_overriden = true;
+
                         if path.starts_with("/PROJECT_ROOT") {
                             *path = get_project_root()
                                 .unwrap()
@@ -136,7 +141,19 @@ fn test_single_input_output(
         serde_json::to_string_pretty(&result).unwrap()
     );
 
-    let expected = expected.unwrap();
+    let mut expected = expected.unwrap();
+
+    if project_root_should_be_overriden {
+        for (_, dirs) in &mut expected.dirs {
+            for (_, path) in &mut dirs.0 {
+                if path.starts_with("/PROJECT_ROOT") {
+                    *path = get_project_root()
+                        .unwrap()
+                        .join(path.strip_prefix("/PROJECT_ROOT").unwrap());
+                }
+            }
+        }
+    }
 
     let match_config = sja::Config::new(sja::CompareMode::Strict);
     let compare_result =
@@ -149,7 +166,7 @@ fn test_single_input_output(
         let actual_json = serde_json::to_string_pretty(&result).unwrap();
 
         println!(
-            "\x1b[91mFailed to match expected output for {}\x1b[0m\n\nDetected drift: {}\n\nActual (lhs):{}\n",
+            "\x1b[91mFailed to match expected output for {}\x1b[0m\n\nDetected drift: {}\n\nCurrent (lhs):{}\n",
             name, compare_result, actual_json
         );
         false
@@ -203,7 +220,7 @@ fn test_builder() {
                     } else {
                         panic!("You need to explicitly use /PROJECT_ROOT in __ROOT_CHDIR__");
                     }
-                },
+                }
                 _ => None,
             };
 

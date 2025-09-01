@@ -1,0 +1,28 @@
+{
+  "application_name": "example-project-dirs",
+  "dirs": {
+    "xdg-not-dir": {
+      "log": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\log"
+    },
+    "fs-non-valid-dir": {
+      "log": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\log",
+      "lib": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\lib",
+      "cache": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\cache",
+      "include": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\include"
+    },
+    "fs-denied": {},
+    "xdg-absent": {
+      "lib": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\lib",
+      "include": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\include",
+      "cache": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\cache"
+    },
+    "xdg-present": {
+      "bin": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\bin",
+      "runtime": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\tmp",
+      "state": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\state",
+      "data": "/PROJECT_ROOT\\test_suite\\example-project-dirs\\data",
+      "config": "/PROJECT_ROOT\\test_suite\\example-project-dirs",
+      "project-root": "/PROJECT_ROOT\\test_suite\\example-project-dirs"
+    }
+  }
+}

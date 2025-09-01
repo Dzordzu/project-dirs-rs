@@ -2,6 +2,22 @@ use std::path::Path;
 
 use crate::{FullProjectDirs, Project};
 
+/// Get a unix dir for a given path. Independent from project
+pub fn unix(full_project_path: &Path) -> FullProjectDirs {
+    FullProjectDirs {
+        cache: full_project_path.join("cache"),
+        data: full_project_path.join("data"),
+        log: full_project_path.join("log"),
+        runtime: Some(full_project_path.join("tmp")),
+        state: full_project_path.join("state"),
+        bin: full_project_path.join("bin"),
+        config: full_project_path.into(),
+        include: full_project_path.join("include"),
+        lib: full_project_path.join("lib"),
+        project_root: Some(full_project_path.into()),
+    }
+}
+
 /// Retrieve unix-style [`FullProjectDirs`]
 pub trait Unix {
     /// Use custom prefix and parent path for the unix-style directories
@@ -28,18 +44,7 @@ impl Unix for Project {
         let project_name = format!("{}{}", prefix, self.application_name);
         let full_project_path = parent_path.join(project_name);
 
-        FullProjectDirs {
-            cache: full_project_path.join("cache"),
-            data: full_project_path.join("data"),
-            log: full_project_path.join("log"),
-            runtime: Some(full_project_path.join("tmp")),
-            state: full_project_path.join("state"),
-            bin: full_project_path.join("bin"),
-            config: full_project_path.clone(),
-            include: full_project_path.join("include"),
-            lib: full_project_path.join("lib"),
-            project_root: Some(full_project_path),
-        }
+        unix(&full_project_path)
     }
 
     fn unix_pwd(&self) -> Result<FullProjectDirs, std::io::Error> {

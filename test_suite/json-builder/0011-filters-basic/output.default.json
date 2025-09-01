@@ -2,27 +2,27 @@
   "application_name": "example-project-dirs",
   "dirs": {
     "xdg-not-dir": {
-      "log": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/log"
+      "log": "/PROJECT_ROOT/test_suite/example-project-dirs/log"
     },
     "fs-non-valid-dir": {
-      "log": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/log",
-      "lib": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/lib",
-      "cache": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/cache",
-      "include": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/include"
+      "log": "/PROJECT_ROOT/test_suite/example-project-dirs/log",
+      "lib": "/PROJECT_ROOT/test_suite/example-project-dirs/lib",
+      "cache": "/PROJECT_ROOT/test_suite/example-project-dirs/cache",
+      "include": "/PROJECT_ROOT/test_suite/example-project-dirs/include"
     },
     "fs-denied": {},
     "xdg-absent": {
-      "lib": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/lib",
-      "include": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/include",
-      "cache": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/cache"
+      "lib": "/PROJECT_ROOT/test_suite/example-project-dirs/lib",
+      "include": "/PROJECT_ROOT/test_suite/example-project-dirs/include",
+      "cache": "/PROJECT_ROOT/test_suite/example-project-dirs/cache"
     },
     "xdg-present": {
-      "bin": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/bin",
-      "runtime": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/tmp",
-      "state": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/state",
-      "data": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs/data",
-      "config": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs",
-      "project-root": "/home/dzordzu/own/project-dirs-rs/test_suite/example-project-dirs"
+      "bin": "/PROJECT_ROOT/test_suite/example-project-dirs/bin",
+      "runtime": "/PROJECT_ROOT/test_suite/example-project-dirs/tmp",
+      "state": "/PROJECT_ROOT/test_suite/example-project-dirs/state",
+      "data": "/PROJECT_ROOT/test_suite/example-project-dirs/data",
+      "config": "/PROJECT_ROOT/test_suite/example-project-dirs",
+      "project-root": "/PROJECT_ROOT/test_suite/example-project-dirs"
     }
   }
 }

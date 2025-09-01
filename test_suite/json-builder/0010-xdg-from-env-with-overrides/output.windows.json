@@ -2,14 +2,14 @@
   "application_name": "my-project",
   "dirs": {
     "xdg-no-fallback": {
-      "lib": "/mnt/home\\my-project\\lib",
-      "include": "/mnt/home\\my-project\\include",
-      "bin": "/home/mojito/.local\\bin",
-      "cache": "/mnt/cache\\my-project",
-      "data": "/mnt/home\\my-project",
-      "config": "/mnt/config\\my-project",
-      "state": "/mnt/state\\my-project",
-      "log": "/mnt/state\\my-project\\log"
+      "log": "/home/mojito/22/.local\\state\\my-project\\log",
+      "lib": "/home/mojito/22/.local\\share\\my-project\\lib",
+      "bin": "/home/mojito/22/.local\\bin",
+      "include": "/home/mojito/22/.local\\share\\my-project\\include",
+      "data": "/home/mojito/22/.local\\share\\my-project",
+      "cache": "/home/mojito/22/.cache\\my-project",
+      "config": "/home/mojito/22/.config\\my-project",
+      "state": "/home/mojito/22/.local\\state\\my-project"
     }
   }
 }

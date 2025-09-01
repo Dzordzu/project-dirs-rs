@@ -1,10 +1,11 @@
 [package]
 name = "project-dirs"
-version = "0.1.0"
+version = "0.1.1"
 authors = ["tomekdur@wp.pl"]
 description = "A library for finding project directories"
 license = "MIT"
 edition = "2024"
+repository = "https://github.com/dzordzu/project-dirs-rs"
 
 [features]
 default = []
