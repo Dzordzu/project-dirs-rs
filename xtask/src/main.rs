@@ -1,7 +1,7 @@
-mod testing;
-mod packaging;
-mod utils;
 mod builds;
+mod packaging;
+mod testing;
+mod utils;
 
 use clap::{Args, Parser, Subcommand, ValueEnum};
 use xshell::Shell;

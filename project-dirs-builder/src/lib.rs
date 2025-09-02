@@ -243,7 +243,7 @@ impl Builder {
                     prefix,
                     skip_project_addition,
                 } => match (skip_project_addition, prefix) {
-                    (true, _) => project_dirs::strategy::unix::unix(&path).into(),
+                    (true, _) => project_dirs::strategy::unix::unix(path).into(),
                     (false, Some(prefix)) => project.unix_prefixed(path, prefix).into(),
                     (false, None) => project.unix(path).into(),
                 },

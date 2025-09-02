@@ -19,7 +19,7 @@ pub struct Cli {
 
     /// Use manifest - empty triplet and system default directories without special env
     #[arg(
-        short='d',
+        short = 'd',
         long,
         group = "manifest",
         requires("application"),
@@ -45,33 +45,31 @@ fn main() {
             spec: project_dirs_builder::Spec::SystemDefault,
         })
         .unwrap()
-    } else {
-        if let Some(manifest) = cli.manifest_file {
-            match std::fs::read_to_string(&manifest) {
-                Ok(content) => content,
-                Err(error) => {
-                    eprintln!(
-                        "\x1b[93mERROR: Failed to read manifest {:?} \x1b[0m",
-                        manifest
-                    );
-                    eprintln!("   {}", error);
-                    std::process::exit(1);
-                }
+    } else if let Some(manifest) = cli.manifest_file {
+        match std::fs::read_to_string(&manifest) {
+            Ok(content) => content,
+            Err(error) => {
+                eprintln!(
+                    "\x1b[93mERROR: Failed to read manifest {:?} \x1b[0m",
+                    manifest
+                );
+                eprintln!("   {}", error);
+                std::process::exit(1);
             }
-        } else {
-            let mut buffer = String::new();
-            for line in std::io::stdin().lines() {
-                buffer.push_str(&line.unwrap());
-            }
-            buffer.trim().to_string()
         }
+    } else {
+        let mut buffer = String::new();
+        for line in std::io::stdin().lines() {
+            buffer.push_str(&line.unwrap());
+        }
+        buffer.trim().to_string()
     };
 
     let mut builder_deserialized = serde_json::Deserializer::from_str(&content);
     let builder = serde_path_to_error::deserialize(&mut builder_deserialized);
     if let Err(error) = builder {
         eprintln!("\x1b[93mERROR: Failed to parse builder\x1b[0m");
-        eprintln!("   serde errors: {}", error.to_string());
+        eprintln!("   serde errors: {}", error);
 
         let builder_json: serde_json::Value = serde_json::from_str(BUILDER_SCHEMA).unwrap();
         let content_json: serde_json::Value = serde_json::from_str(&content).unwrap();

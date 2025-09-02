@@ -75,7 +75,7 @@ pub unsafe extern "C" fn project_dirs__from_builder_with_msg(
         let s = s as *const i8;
         let s = std::ffi::CStr::from_ptr(s).to_str();
 
-        if !s.is_ok() {
+        if s.is_err() {
             return fail(FromBuilderError::NonStrInput as u8, error as *mut u8);
         }
         let s = s.unwrap();
@@ -102,7 +102,7 @@ pub unsafe extern "C" fn project_dirs__from_builder_with_msg(
         let builder = builder.unwrap();
 
         let result_str = serde_json::to_string(&builder.build());
-        if !result_str.is_ok() {
+        if result_str.is_err() {
             return fail(
                 FromBuilderError::ResultSerializationFailed as u8,
                 error as *mut u8,

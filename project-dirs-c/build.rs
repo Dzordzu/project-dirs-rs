@@ -7,7 +7,7 @@ fn main() {
 
     let config = cbindgen::Config {
         language: cbindgen::Language::C,
-        enumeration: cbindgen::EnumConfig{
+        enumeration: cbindgen::EnumConfig {
             prefix_with_name: true,
             ..Default::default()
         },
@@ -15,11 +15,11 @@ fn main() {
     };
 
     cbindgen::Builder::new()
-      .with_config(config)
-      .with_crate(crate_dir)
-      .with_item_prefix("project_dirs__")
-      .with_language(cbindgen::Language::C)
-      .generate()
-      .expect("Unable to generate bindings")
-      .write_to_file("project-dirs-c.h");
+        .with_config(config)
+        .with_crate(crate_dir)
+        .with_item_prefix("project_dirs__")
+        .with_language(cbindgen::Language::C)
+        .generate()
+        .expect("Unable to generate bindings")
+        .write_to_file("project-dirs-c.h");
 }

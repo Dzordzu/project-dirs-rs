@@ -46,7 +46,7 @@ fn main() {
     let args: Vec<String> = std::env::args().collect();
 
     let schema = if let Some(variant) = args.get(1) {
-        let e = serde_json::to_value(&Everything::new()).unwrap();
+        let e = serde_json::to_value(Everything::new()).unwrap();
         let v = e.as_object().unwrap().get(variant);
 
         if v.is_none() {
@@ -56,7 +56,7 @@ fn main() {
 
         v.unwrap().clone()
     } else {
-        serde_json::to_value(&Everything::new()).unwrap().clone()
+        serde_json::to_value(Everything::new()).unwrap().clone()
     };
 
     println!("{}", serde_json::to_string_pretty(&schema).unwrap());

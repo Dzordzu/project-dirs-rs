@@ -4,7 +4,7 @@ use pyo3::prelude::*;
 /// Formats the sum of two numbers as string.
 #[pyfunction]
 fn from_manifest(manifest: &str) -> PyResult<String> {
-    let builder: project_dirs_builder::Builder = serde_json::from_str(&manifest)
+    let builder: project_dirs_builder::Builder = serde_json::from_str(manifest)
         .map_err(|e| PyErr::new::<PyValueError, _>(format!("Failed to parse manifest: {e}")))?;
 
     let result = serde_json::to_string(&builder.build())

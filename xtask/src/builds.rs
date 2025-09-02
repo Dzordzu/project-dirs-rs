@@ -1,14 +1,8 @@
-fn build_rust() {
+fn build_rust() {}
 
-}
+fn build_python() {}
 
-fn build_python() {
-
-}
-
-fn build_schemas() {
-
-}
+fn build_schemas() {}
 
 fn build() {
     build_rust();
